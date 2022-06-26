@@ -1,0 +1,143 @@
+/**
+ * /*-------------------------------------------
+ * アバウト
+ * -------------------------------------------
+ *
+ * @format
+ */
+
+@use "mixin" as m;
+
+.about {
+  margin: 0 auto 420px;
+  width: 100%;
+  position: relative;
+
+  @include m.mq(sp) {
+    width: 100%;
+    margin-bottom: 460px;
+  }
+
+  .about__conceptWrap,
+  .about__profileWrap {
+    width: 500px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 20px;
+
+    @include m.mq(sp) {
+      width: 250px;
+      height: 420px;
+    }
+  }
+
+  .about__conceptWrap {
+    background: rgba(149, 197, 224, 0.5);
+    border: 2px solid #95c5e0;
+
+    @include m.mq(sp) {
+      margin-left: 20px;
+    }
+
+    .about__conceptWrap__concept {
+      .about__conceptWrap__concept__catch {
+        text-align: center;
+        text-decoration: underline wavy #fff;
+      }
+
+      .about__conceptWrap__concept__fish {
+        font-size: 2rem;
+        margin-bottom: 36px;
+        text-align: center;
+      }
+
+      .about__conceptWrap__concept__concept-txt-pc {
+        display: block;
+
+        @include m.mq(sp) {
+          display: none;
+        }
+      }
+
+      .about__conceptWrap__concept__concept-txt-sp {
+        display: none;
+
+        @include m.mq(sp) {
+          display: block;
+        }
+
+        p {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+
+  .about__profileWrap {
+    background: rgba(199, 225, 237, 0.2);
+    border: 2px solid #95c5e0;
+    position: absolute;
+    top: 90%;
+    right: 0%;
+
+    @include m.mq(sp) {
+      margin-right: 20px;
+    }
+
+    .about__profileWrap__profile {
+      display: flex;
+      align-items: center;
+
+      @include m.mq(sp) {
+        flex-direction: column;
+      }
+    }
+
+    .about__profileWrap__profile__profile-img img {
+      border-radius: 50%;
+      width: 120px;
+
+      @include m.mq(sp) {
+        margin-bottom: 20px;
+      }
+    }
+
+    .about__profileWrap__profile__name-pc,
+    .about__profileWrap__profile__name-sp {
+      border-bottom: 1px double #95c5e0;
+    }
+
+    .about__profileWrap__profile__profile-txt-pc {
+      margin-left: 20px;
+      display: block;
+
+      @include m.mq(sp) {
+        display: none;
+      }
+    }
+
+    .about__profileWrap__profile__name-pc {
+      margin-bottom: 20px;
+    }
+  }
+
+  .about__profileWrap__profile__profile-txt-sp {
+    display: none;
+
+    @include m.mq(sp) {
+      display: block;
+    }
+
+    p {
+      font-size: 1.4rem;
+    }
+
+    .about__profileWrap__profile__name-sp {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  }
+}

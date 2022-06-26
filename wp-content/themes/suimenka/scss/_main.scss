@@ -1,0 +1,46 @@
+/**
+ * /*-------------------------------------------
+ * メイン
+ * -------------------------------------------
+ *
+ * @format
+ */
+
+@use "mixin" as m;
+
+// https://www.webcreatorbox.com/tech/border-radius
+
+.main {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 120px;
+
+  @include m.mq(tab-l) {
+    margin: 80px auto;
+    padding: 0 20px;
+  }
+}
+
+.main.works-list,
+.main.works-view {
+  padding-top: 80px;
+
+  @include m.mq(sp) {
+    padding-top: 120px;
+  }
+}
+
+.main.works-view.single {
+  padding-top: 0;
+}
+
+.service,
+.works,
+.contact {
+  margin-bottom: 160px;
+
+  @include m.mq(sp) {
+    width: 100%;
+    margin-bottom: 80px;
+  }
+}
