@@ -1,0 +1,70 @@
+/**
+ * /*-------------------------------------------
+ * ワークス
+ * -------------------------------------------
+ *
+ * @format
+ */
+
+.works {
+  .works__wrap {
+    display: grid;
+    width: 100%;
+    margin: 0 auto;
+    // grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+
+    // 最小300px、最大は画面幅に合わせる処理をアイテムがある分繰り返す
+    // fr=外枠に合わせてグリッドを分割し、そのサイズを自動調整する
+    // 参考：https://web.hazu.jp/grid-layout-02/
+    // grid-template-columns: repeat(auto-fit, minmax(200px, 50%));
+
+    // ↓2列ver
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .works__item {
+    margin: 0 auto;
+
+    a {
+      transition: 0.2s;
+      display: inline;
+
+      &:hover {
+        opacity: 0.8;
+        transition: 0.2s;
+      }
+    }
+  }
+
+  .readmore {
+    margin: 80px auto 0;
+    width: 200px;
+    height: 60px;
+    background: #fff;
+    border: 2px solid #95c5e0;
+    border-radius: 10px;
+    display: block;
+    line-height: 60px;
+    text-align: center;
+
+    a {
+      display: block;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+      background: #95c5e0;
+      transition-duration: 0.3s;
+    }
+  }
+
+  .works__itemTitle {
+    margin-top: 8px;
+    text-align: center;
+  }
+}

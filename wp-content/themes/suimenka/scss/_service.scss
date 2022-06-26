@@ -1,0 +1,142 @@
+/**
+ * /*-------------------------------------------
+ * サービス
+ * -------------------------------------------
+ *
+ * @format
+ */
+
+@use "mixin" as m;
+
+.service {
+  position: relative;
+
+  .service__ul {
+    display: flex;
+    justify-content: space-between;
+
+    @include m.mq(sp) {
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .serviceList {
+    position: relative;
+    background: #c7e1ed;
+    padding: 56px 40px;
+    margin-right: 60px;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+    width: calc(100% / 3);
+    height: 450px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include m.mq(tab-l) {
+      margin-right: 40px;
+    }
+
+    @include m.mq(sp) {
+      width: 100%;
+      margin: 0 20px;
+      margin-bottom: 80px;
+
+      &:last-child {
+        margin-bottom: 0;
+        margin-right: 20px;
+      }
+    }
+
+    .wave {
+      position: absolute;
+      height: 50px;
+      width: 100%;
+      background: #c7e1ed;
+
+      bottom: 0;
+      left: 0;
+    }
+
+    .wave::before,
+    .wave::after {
+      content: "";
+      display: block;
+      position: absolute;
+      border-radius: 100% 50%;
+    }
+
+    .wave::before {
+      width: 55%;
+      height: 109%;
+      background-color: #fff; /* 右側の波 */
+      right: -4%;
+      top: 60%;
+    }
+    .wave::after {
+      width: 55%;
+      height: 106%;
+      background: #c7e1ed; /* 左側の波 */
+      left: 0;
+      top: 40%;
+    }
+  }
+
+  .serviceList__img {
+    width: 80px;
+  }
+
+  .serviceList__title {
+    font-size: 40px;
+    font-family: Oleo Script;
+    color: #fff;
+    opacity: 0.7;
+    margin: 16px 0;
+  }
+
+  .serviceList__txt {
+    @include m.mq(pc) {
+      font-size: 1.6rem;
+    }
+
+    @include m.mq(tab-s) {
+      font-size: 1.4rem;
+    }
+
+    @include m.mq(sp) {
+      font-size: 1.6rem;
+    }
+  }
+
+  // https://125naroom.com/web/2864
+  .arrow {
+    position: relative;
+    display: inline-block;
+    color: #c4c4c4;
+
+    &:before {
+      content: "";
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 16px 0 16px 24px;
+      border-color: transparent transparent transparent #c4c4c4;
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      margin-top: -6px;
+
+      @include m.mq(tab-l) {
+        border-width: 12px 0 12px 20px;
+        right: 8px;
+      }
+    }
+
+    @include m.mq(sp) {
+      display: none;
+    }
+  }
+}

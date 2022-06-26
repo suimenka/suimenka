@@ -1,0 +1,19 @@
+/** @format */
+
+@charset "UTF-8";
+/*
+Theme Name: suimenka
+*/
+
+@use "variables" as v;
+@use "mixin" as m;
+
+@use "header" as *;
+@use "firstView" as *;
+@use "main" as *;
+@use "about" as *;
+@use "service" as *;
+@use "works" as *;
+@use "contact" as *;
+@use "footer" as *;
+@use "worksView" as *;

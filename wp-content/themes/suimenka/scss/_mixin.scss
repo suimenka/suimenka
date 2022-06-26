@@ -1,0 +1,17 @@
+/** @format */
+
+// ブレイクポイントを指定
+$breakpoint: (
+  pc: "screen and (max-width: 1024px)",
+  tab-l: "screen and (max-width: 899px)",
+  tab-m: "screen and (max-width: 640px)",
+  // tab-s: "screen and (min-width: 600px)",
+  tab-s: "(min-width: 640px)and (max-width: 1024px)",
+  sp: "screen and (max-width: 599px)",
+);
+
+@mixin mq($bp) {
+  @media #{map-get($breakpoint, $bp)} {
+    @content;
+  }
+}

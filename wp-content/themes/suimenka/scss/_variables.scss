@@ -1,0 +1,199 @@
+/**
+ * /*-------------------------------------------
+ * 全体の設定
+ * -------------------------------------------
+ *
+ * @format
+ */
+
+@use "mixin" as m;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+:after,
+:before {
+  background-repeat: no-repeat;
+  // ▼親要素の値を継承する
+  // 参考：https://jajaaan.co.jp/web-production/frontend/box-sizing/
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  // ▼デフォルトを10pxにする
+  // 参考：https://jajaaan.co.jp/css/font-size-rem/
+  font-size: 62.5%;
+  scroll-padding-top: 100px; /* 固定ヘッダの高さ分 */
+
+  @include m.mq(sp) {
+    scroll-padding-top: 120px;
+  }
+}
+
+body {
+  background: #fff;
+  color: #333;
+  font-size: 1.6rem;
+  color: #333;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 0.08em;
+  position: relative;
+
+  .pagetop {
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #eef6f9;
+    opacity: 0.8;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    color: #95c5e0;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+// ▼レスポンシブ時の右側の余白を消す
+// 参考：https://aya2kiku.com/htmlcss_space/
+.wrap {
+  overflow: hidden;
+}
+
+/*-------------------------------------------
+共通
+-------------------------------------------*/
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  color: #333;
+  font-size: 1.6rem;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+p {
+  font-weight: normal;
+  text-align: justify;
+}
+
+// https://design-levelup.com/webdesign/html_css_making_2/
+.section-title-center {
+  text-align: center;
+
+  .section-title-en {
+    position: relative;
+    display: inline-block;
+    font-size: 3rem;
+    padding: 0 55px;
+    letter-spacing: 0.2em;
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      display: inline-block;
+      width: 50px;
+      height: 2px;
+      background-color: #666;
+    }
+
+    &:before {
+      left: -10px;
+    }
+
+    &:after {
+      right: -10px;
+    }
+  }
+
+  .section-title-ja {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+}
+
+.bubble {
+  position: absolute;
+  bottom: -40px;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  animation: bubble 10s ease-in infinite;
+  z-index: 10;
+}
+
+.bubble:nth-child(1) {
+  width: 20px;
+  height: 20px;
+  left: 30%;
+  animation-duration: 6s;
+}
+
+.bubble:nth-child(2) {
+  left: 20%;
+  animation-duration: 3.5s;
+}
+
+.bubble:nth-child(3) {
+  width: 30px;
+  height: 30px;
+  left: 30%;
+  animation-duration: 7s;
+}
+
+.bubble:nth-child(4) {
+  width: 50px;
+  height: 50px;
+  left: 67%;
+  animation-duration: 6s;
+}
+
+.bubble:nth-child(5) {
+  width: 20px;
+  height: 20px;
+  left: 70%;
+  animation-duration: 4.5s;
+}
+
+@keyframes bubble {
+  0% {
+    bottom: -100px;
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(100px);
+  }
+  100% {
+    bottom: 100%;
+  }
+}
+
+/*
+フェード表示させる要素に使用するためのクラス
+*/
+.fadein {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s;
+}

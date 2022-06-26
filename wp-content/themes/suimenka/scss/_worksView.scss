@@ -1,0 +1,204 @@
+/**
+ * /*-------------------------------------------
+ * ワークス個別
+ * -------------------------------------------
+ *
+ * @format
+ */
+
+@use "mixin" as m;
+
+.works__imgView {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0 120px;
+
+  @include m.mq(sp) {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  .works__imgView__pc {
+    display: inline-block;
+    margin: 0 auto 10px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #c9c9c9;
+    margin: 0 auto;
+  }
+}
+
+.works__imgView__dl {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+
+  .works__imgView__dt,
+  .works__imgView__dd {
+    padding: 20px 12px;
+    border-bottom: 1px solid #c6c6c6;
+  }
+
+  .works__imgView__dt {
+    width: 20%;
+    padding-right: 0;
+  }
+
+  .works__imgView__dd {
+    width: 80%;
+    padding-left: 20px;
+  }
+
+  @include m.mq(tab-m) {
+    margin-top: 20px;
+    font-size: 1.2rem;
+  }
+
+  a {
+    color: #95c5e0;
+
+    &:hover {
+      border-bottom: none;
+    }
+
+    @include m.mq(tab-m) {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+#openModal {
+  width: 140px;
+  height: 40px;
+  background: #c7e1ed;
+  opacity: 0.9;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+
+  p {
+    text-align: center;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+// 参考：https://myscreate.com/pure-modal/
+// https://myscreate.com/modal-without-jquery/
+
+/* モーダルCSSここから */
+.modalArea {
+  visibility: hidden; /* displayではなくvisibility */
+  opacity: 0;
+  position: fixed;
+  z-index: 10; /* サイトによってここの数値は調整 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.4s;
+}
+
+.modalBg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 30, 30, 0.9);
+}
+
+.modalWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  max-width: 500px;
+  padding: 10px 30px;
+  background-color: #fff;
+  height: 90%;
+  overflow: auto; //状況に応じて縦スクロールバーが出現
+
+  @include m.mq(sp) {
+    width: 90%;
+    height: 80%;
+    padding: 5px;
+  }
+}
+
+.modalContents {
+  img {
+    border: 1px solid #c9c9c9;
+    max-width: 300px;
+  }
+}
+
+.modalTop {
+  width: 100%;
+  height: 20px;
+  position: sticky;
+  top: 0;
+}
+
+.closeModal {
+  position: absolute;
+  top: 0;
+  right: -2rem;
+  cursor: pointer;
+  font-size: 5rem;
+
+  @include m.mq(sp) {
+    top: 0.8rem;
+    right: 1.6rem;
+  }
+}
+
+.is-show {
+  /* モーダル表示用クラス */
+  visibility: visible;
+  opacity: 1;
+}
+/* モーダルCSSここまで */
+
+/*-------------------------------------------
+ワークス一覧
+-------------------------------------------*/
+
+// .pagination {
+//   display: flex;
+//   justify-content: center;
+//   margin: 40px 0;
+
+//   li {
+//     padding: 20px;
+//     width: 40px;
+//     height: 50px;
+//     background: #fff;
+//     border: 1px solid #c7e1ed;
+//     margin-right: 20px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+
+//     &:first-child {
+//       background: #c7e1ed;
+//       border: 1px solid #c7e1ed;
+//     }
+
+//     &:last-child {
+//       margin-right: 0;
+//     }
+//   }
+
+//   a {
+//     display: block;
+//   }
+// }
